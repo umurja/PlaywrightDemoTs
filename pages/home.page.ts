@@ -17,7 +17,16 @@ readonly prodSubMenuTestMgmtLink: Locator;
 readonly prodSubMenuTestObserveLink: Locator;
 readonly prodSubMenuAppLiveLink: Locator;
 readonly prodSubMenuAppPercyLink: Locator;
+
 readonly developerMenuDropdown:Locator
+readonly devMenuDocumentation:Locator
+readonly devMenuSupport:Locator
+readonly devMenuStatus:Locator
+readonly devMenuReleaseNotes:Locator
+readonly devMenuOpenSrc:Locator
+readonly devMenuEvents:Locator
+readonly devMenuTestU:Locator
+readonly devMenuChampions:Locator
 
 readonly liveForTeamsMenu:Locator
 readonly pricingMenu:Locator
@@ -27,6 +36,7 @@ constructor(page: Page) {
     this.page = page;
     this.browserstackLogo = page.locator(".bstack-mm-logo");
     this.menuContainer = page.locator("#primary-menu-container");
+
     this.productMenuDropdown = page.locator("#products-dd-toggle");
     this.prodSubMenuWebTestBtn = page.locator("button[title='Web Testing']");
     this.prodSubMenuAppTestBtn = page.locator('#products-dd-tab-2');
@@ -40,8 +50,17 @@ constructor(page: Page) {
     this.prodSubMenuAppLiveLink = page.locator("a[title='App Live']");
     this.prodSubMenuAppPercyLink = page.locator("a[title='App Percy']");
 
-
     this.developerMenuDropdown = page.locator("#developers-dd-toggle");
+    this.devMenuDocumentation = page.locator("a.bstack-mm-link.bstack-mm-dev-link-documentation");
+    this.devMenuSupport = page.locator("a.bstack-mm-link.bstack-mm-dev-link-support");
+    this.devMenuStatus = page.locator("a.bstack-mm-link.bstack-mm-dev-link-status");
+    this.devMenuReleaseNotes = page.locator("a.bstack-mm-link.bstack-mm-dev-link-release-notes");
+    this.devMenuOpenSrc = page.locator("a.bstack-mm-link.bstack-mm-dev-link-open-source");
+    this.devMenuEvents = page.locator("a.bstack-mm-link.bstack-mm-dev-link-events");
+    this.devMenuTestU = page.locator("a.bstack-mm-link.bstack-mm-dev-link-test-university");
+    this.devMenuChampions = page.locator("a.bstack-mm-link.bstack-mm-dev-link-browserstack-champions");
+
+
     this.liveForTeamsMenu = page.locator("a[title='Live for Teams']");
     this.pricingMenu = page.locator("a[title='Pricing']");
     this.signInMenu = page.locator("a[title='Sign in']");

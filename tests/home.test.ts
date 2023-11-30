@@ -37,11 +37,21 @@ test.describe('Test Homepage Menu', () => {
         const homepage = new BrowserstackHomePage(page);
         await homepage.goto();
         await homepage.clickOnDevelopers();
+        await expect(homepage.devMenuDocumentation).toBeVisible
+        await expect(homepage.devMenuSupport).toBeVisible
+        await expect(homepage.devMenuStatus).toBeVisible
+        await expect(homepage.devMenuReleaseNotes).toBeVisible
+        await expect(homepage.devMenuOpenSrc).toBeVisible
+        await expect(homepage.devMenuEvents).toBeVisible
+        await expect(homepage.devMenuTestU).toBeVisible
+        await expect(homepage.devMenuChampions).toBeVisible
     });
 
     test('Browserstack AboutUs Page', async ({ page }) => {
         const aboutPage = new AboutPage(page)
         await aboutPage.goto();
+        await expect(page).toHaveURL("https://www.browserstack.com/company");
         await aboutPage.clickmeetCustomersBtn();
+        await expect(page).toHaveURL("https://www.browserstack.com/customers");
     });
 });
